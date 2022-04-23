@@ -1,0 +1,34 @@
+extends ../base.pug
+
+block variables
+    - var template = 'home'
+
+block body
+    .home(data-background="" data-color="")
+        canvas.webgl-container
+        //- Scroll wrapper
+        .home__wrapper
+            .home__banner
+                .home__banner__inner
+                    h1.home__title.splitter Hello,
+                    h1.home__title.splitter we are an
+                    h1.home__title.splitter independent
+                    h1.home__title.splitter
+                        a.home__title__link(href="/") creative agency
+                    h1.home__title.splitter
+                        a.home__title__link(href="/") in the Istanbul
+                    h1.home__title.splitter who connect
+                    h1.home__title.splitter
+                        a.home__title__link(href="/") brands with
+                    h1.home__title.splitter
+                        a.home__title__link(href="/") their audiences
+                    h1.home__title.splitter using design,
+                    h1.home__title.splitter
+                        a.home__title__link(href="/") technology
+                    h1.home__title.splitter and insights.
+
+            .home__screen
+                figure.home__inner__screen
+                    img.home__screen__img(data-src="/home_screen.jpg", alt="Home Screen Picture")
+
+            .home__screen__content

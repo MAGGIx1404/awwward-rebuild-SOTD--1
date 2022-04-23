@@ -1,0 +1,58 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  pointer-events: none;
+  mix-blend-mode: difference;
+
+  & .container {
+    max-width: 90%;
+    height: fit-content;
+    width: 100%;
+    margin: 0 auto;
+    @extend %flex-row-space;
+    padding: 2rem 0;
+  }
+
+  & .magnet {
+    display: inline-block;
+    pointer-events: all;
+    padding: 1rem;
+  }
+
+  & a {
+    pointer-events: all !important;
+    cursor: pointer;
+    color: $color-white;
+    display: inline-block;
+  }
+
+  & .logo {
+    @extend %description-32;
+    font-weight: 700;
+    font-family: $font-b;
+  }
+}
+
+.nav__links {
+  flex: 0 0 20%;
+  max-width: 20%;
+  width: 100%;
+  height: fit-content;
+  @extend %flex-row-space;
+
+  & .nav__btn {
+    @extend %description-14;
+    font-weight: 400;
+    color: $color-white;
+    @extend %link;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $color-theme;
+    }
+  }
+}
