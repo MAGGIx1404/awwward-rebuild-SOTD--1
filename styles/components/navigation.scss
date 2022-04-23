@@ -17,12 +17,6 @@
     padding: 2rem 0;
   }
 
-  & .magnet {
-    display: inline-block;
-    pointer-events: all;
-    padding: 1rem;
-  }
-
   & a {
     pointer-events: all !important;
     cursor: pointer;
@@ -55,4 +49,10 @@
       color: $color-theme;
     }
   }
+}
+
+.magnet {
+  display: inline-block;
+  pointer-events: all;
+  padding: 1rem;
 }

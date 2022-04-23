@@ -13,25 +13,30 @@ export default class Home extends Page {
       elements: {
         wrapper: ".home__wrapper", // scroller
         links_wrapper: ".home__title__link",
-        home_pic: ".home__screen__img"
+        home_pics: ".parallax__image"
       }
     });
   }
 
   create() {
     super.create();
-    // if (window.innerWidth > 1024) {
-    //   cube();
-    // }
     this.parallax();
   }
 
   parallax() {
-    this.imgOne = this.elements.home_pic;
-    this.parallaxEffect = new Ukiyo(this.imgOne, {
-      speed: 2.5,
-      scale: 1.25
+    this.imgOne = [...this.elements.home_pics];
+
+    this.imgOne.forEach((ele) => {
+      this.parallaxEffect = new Ukiyo(ele, {
+        speed: 2.5,
+        scale: 1.25
+      });
     });
+
+    // this.parallaxEffect = new Ukiyo(this.imgOne, {
+    //   speed: 2.5,
+    //   scale: 1.25
+    // });
   }
 
   onResize() {

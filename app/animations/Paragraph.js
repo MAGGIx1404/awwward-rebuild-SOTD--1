@@ -41,7 +41,7 @@ export default class extends Animation {
 
     each(this.lines, (line, lineIndex) => {
       each(line, (word) => {
-        word.style.transition = `transform 1.5s ${lineIndex * 0.1}s ${CSS}`;
+        word.style.transition = `transform 1.45s ${lineIndex * 0.1}s ${CSS}`;
         word.style[this.transformPrefix] = "translateY(0)";
       });
     });

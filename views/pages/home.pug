@@ -29,6 +29,123 @@ block body
 
             .home__screen
                 figure.home__inner__screen
-                    img.home__screen__img(data-src="/home_screen.jpg", alt="Home Screen Picture")
+                    img.home__screen__img.parallax__image(data-src="/home_screen.jpg", alt="Home Screen Picture")
 
             .home__screen__content
+                .home__screen__content__inner
+                    p.home__screen__content__paragraph(data-animation="paragraph")!=home.data.home_screen[0].home_screen_paragraph.replace(/\n/g, "<br/>")
+                    //- lists
+                    .lists__wrapper(data-scroll data-scroll-offset="50%")
+                        //- LIST ONE
+                        ul.service__list
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Product strategy
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") UX and UI design
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Front-end development
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Back-end development
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") QA
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Support
+                        //- LIST TWO
+                        ul.service__list
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Strategy
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Brand identity design
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Creative web design
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Graphic design and CGI
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Content development
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Creative front-end
+                        //- LIST THREE
+                        ul.service__list
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Back-end development
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Mobile Development
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Photograpy
+                            li.service__list__item
+                                p.service__list__item__content(data-animation="paragraph") Video Production
+                    //- link
+                    .magnet.home__screen__link__wrapper
+                        a.home__screen__content__link.splitter(href="/") See All Service ->
+
+            .home__work__wrapper
+                .home__work__inner__wrapper
+                    .home__work__title__wrapper
+                        h1.home__work__title(data-animation="paragraph") Recent Works
+                    //- works
+                    .home__work__list
+                        .home__work__inner__list
+                            //- work box
+                            .home__work__box
+                                figure.home__work__pic__wrapper
+                                    img.home__work__pic.parallax__image(data-src="/cases/1.jpg", alt="work image")
+                                a.home__work__title.splitter(href="/")!=home.data.home_work_wrapper[0].home_work_1.replace(/\n/g, "<br/>")
+                            //- work box
+                            .home__work__box
+                                figure.home__work__pic__wrapper
+                                    img.home__work__pic.parallax__image(data-src="/cases/2.jpg", alt="work image")
+                                a.home__work__title.splitter(href="/")!=home.data.home_work_wrapper[0].home_work_2.replace(/\n/g, "<br/>")
+                            //- work box
+                            .home__work__box
+                                figure.home__work__pic__wrapper
+                                    img.home__work__pic.parallax__image(data-src="/cases/3.webp", alt="work image")
+                                a.home__work__title.splitter(href="/")!=home.data.home_work_wrapper[0].home_work_3.replace(/\n/g, "<br/>")
+                            //- work box
+                            .home__work__box
+                                figure.home__work__pic__wrapper
+                                    img.home__work__pic.parallax__image(data-src="/cases/4.jpg", alt="work image")
+                                a.home__work__title.splitter(href="/")!=home.data.home_work_wrapper[0].home_work_4.replace(/\n/g, "<br/>")
+                            //- work box
+                            .home__work__box
+                                figure.home__work__pic__wrapper
+                                    img.home__work__pic.parallax__image(data-src="/cases/5.jpg", alt="work image")
+                                a.home__work__title.splitter(href="/")!=home.data.home_work_wrapper[0].home_work_5.replace(/\n/g, "<br/>")
+                            //- work box
+                            .home__work__box
+                                figure.home__work__pic__wrapper
+                                    img.home__work__pic.parallax__image(data-src="/cases/6.jpg", alt="work image")
+                                a.home__work__title.splitter(href="/")!=home.data.home_work_wrapper[0].home_work_6.replace(/\n/g, "<br/>")
+
+                            .magnet.home__work__link__wrapper
+                                a.home__work__link.splitter(href="/") See All Projects ->
+
+            .home__partner__wrapper
+                .home__partner__inner__wrapper
+                    .home__partner__title__wrapper
+                        h1.home__partner__title(data-animation="paragraph")!=home.data.partner_wrapper[0].partner_title.replace(/\n/g, "<br/>")
+                    .home__partner__content__wrapper
+                        p.home__partner__paragraph(data-animation="paragraph")!=home.data.partner_wrapper[0].partner_paragraph.replace(/\n/g, "</br>")
+
+                .home__partner__lists
+                    .home__partner__list(data-scroll data-scroll-speed="4" data-scroll-direction="horizontal")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/1.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/2.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/3.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/4.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/5.webp", alt="error")
+                    .home__partner__list(data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/5.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/6.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/7.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/8.webp", alt="error")
+                        figure.home__partner__box
+                            img.home__partner__img(data-src="/clients/1.webp", alt="error")
