@@ -14,7 +14,10 @@ import AsyncLoad from "classes/AsyncLoad";
 import locoScroll from "utils/locoscroll";
 
 export default class Page {
-  constructor({ id, element, elements }) {
+  constructor({ classes, id, element, elements }) {
+    this.classes = {
+      ...classes
+    };
     this.id = id;
     this.selector = element;
     this.selectorChildren = {
@@ -136,16 +139,6 @@ export default class Page {
     if (onPreloaded) {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
-        this.animationIn.fromTo(
-          this.element,
-          2,
-          {
-            opacity: 0
-          },
-          {
-            opacity: 1
-          }
-        );
         this.animationIn.call(() => {
           this.addEventListeners();
           resolve();
@@ -180,17 +173,12 @@ export default class Page {
    */
   async hide() {
     return new Promise((resolve) => {
+      each(this.animations, (animation) => {
+        animation.animateOut();
+      });
       this.destroy();
       window.ASSETS = [];
       this.animateOut = gsap.timeline();
-      this.animateOut.to(
-        this.element,
-        2,
-        {
-          autoAlpha: 0
-        },
-        0
-      );
       this.animateOut.call(() => {
         resolve();
       });

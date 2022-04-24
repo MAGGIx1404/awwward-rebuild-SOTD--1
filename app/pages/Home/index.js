@@ -8,6 +8,9 @@ import Ukiyo from "ukiyojs";
 export default class Home extends Page {
   constructor() {
     super({
+      classes: {
+        active: "home--active"
+      },
       id: "home",
       element: ".home",
       elements: {
@@ -37,6 +40,18 @@ export default class Home extends Page {
     //   speed: 2.5,
     //   scale: 1.25
     // });
+  }
+
+  show() {
+    this.element.classList.add(this.classes.active);
+  }
+
+  async hide() {
+    this.element.classList.remove(this.classes.active);
+
+    await delay(2000);
+
+    return super.hide();
   }
 
   onResize() {

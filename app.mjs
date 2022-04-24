@@ -57,24 +57,24 @@ app.get("/", async (req, res) => {
 
   return res.render("pages/home", {
     home,
-    // ...defaults,
+    ...defaults,
     assets
   });
 });
 
-// // About page
-// app.get("/about", async (req, res) => {
-//   res.locals.handleRichText = handleRichText;
-//   const defaults = await handleRequest(client);
-//   const about = await client.getSingle("about");
-//   const assets = [];
+// About page
+app.get("/about", async (req, res) => {
+  res.locals.handleRichText = handleRichText;
+  const defaults = await handleRequest(client);
+  const about = await client.getSingle("about");
+  const assets = [];
 
-//   return res.render("pages/about", {
-//     about,
-//     ...defaults,
-//     assets
-//   });
-// });
+  return res.render("pages/about", {
+    about,
+    ...defaults,
+    assets
+  });
+});
 
 // // Portfolio page
 // app.get("/portfolio", async (req, res) => {

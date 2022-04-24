@@ -149,3 +149,42 @@ block body
                             img.home__partner__img(data-src="/clients/8.webp", alt="error")
                         figure.home__partner__box
                             img.home__partner__img(data-src="/clients/1.webp", alt="error")
+
+            .home__pride
+                .home__pride__wrapper
+                    .home__pride__content
+                        .home__pride__title__wrapper
+                            h1.home__pride__title(data-animation="paragraph")!=home.data.home_pride[0].home_pride_title.replace(/\n/g,"</br>")
+                        .home__pride__paragraph__wrapper
+                            p.home__pride__paragraph(data-animation="paragraph")!=home.data.home_pride[0].home_pride_paragraph.replace(/\n/g,"</br>")
+                    ul.home__pride__list
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") Site Of the Day
+                            p.home__pride__list__item__content(data-animation="paragraph") Awwwards
+                            p.home__pride__list__item__content(data-animation="paragraph") x28
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") Site Of the Month
+                            p.home__pride__list__item__content(data-animation="paragraph") Awwwards
+                            p.home__pride__list__item__content(data-animation="paragraph") x13
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") Site Of the Year
+                            p.home__pride__list__item__content(data-animation="paragraph") Awwwards
+                            p.home__pride__list__item__content(data-animation="paragraph") x4
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") UX Design Of the Month
+                            p.home__pride__list__item__content(data-animation="paragraph") CSSDA
+                            p.home__pride__list__item__content(data-animation="paragraph") x6
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") Studio Of the Year
+                            p.home__pride__list__item__content(data-animation="paragraph") CSSDA
+                            p.home__pride__list__item__content(data-animation="paragraph") x2
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") Agency Of the Year
+                            p.home__pride__list__item__content(data-animation="paragraph") Golden Apple
+                            p.home__pride__list__item__content(data-animation="paragraph") x1
+                        li.home__pride__list__item(data-scroll data-scroll-offset="50%")
+                            p.home__pride__list__item__content(data-animation="paragraph") Website Of the Day
+                            p.home__pride__list__item__content(data-animation="paragraph") Cyristal Studios
+                            p.home__pride__list__item__content(data-animation="paragraph") x9
+
+            include ../partials/footer

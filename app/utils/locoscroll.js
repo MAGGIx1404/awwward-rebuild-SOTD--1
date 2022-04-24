@@ -8,7 +8,7 @@ export default function initLocoScroll(wrapper) {
     el: wrapper,
     smooth: true,
     smoothMobile: true,
-    lerp: 0.05,
+    lerp: 0.03,
     // reloadOncontextChange: true,
     getDirection: true,
     // repeat: true,
