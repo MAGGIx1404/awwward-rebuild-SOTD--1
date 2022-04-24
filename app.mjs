@@ -57,7 +57,7 @@ app.get("/", async (req, res) => {
 
   return res.render("pages/home", {
     home,
-    ...defaults,
+    // ...defaults,
     assets
   });
 });
@@ -65,13 +65,13 @@ app.get("/", async (req, res) => {
 // About page
 app.get("/about", async (req, res) => {
   res.locals.handleRichText = handleRichText;
-  const defaults = await handleRequest(client);
+  // const defaults = await handleRequest(client);
   const about = await client.getSingle("about");
   const assets = [];
 
   return res.render("pages/about", {
     about,
-    ...defaults,
+    // ...defaults,
     assets
   });
 });

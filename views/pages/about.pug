@@ -6,7 +6,15 @@ block variables
 block body
     .about(data-background="" data-color="")
         canvas.webgl-container
+            img(data-src="/1.jpg", alt="")
         //- Scroll wrapper
         .about__wrapper
             .about__banner
-                h1 hee
+                .about__banner__inner
+                    h1.about__banner__title.splitter!=about.data.about_banner[0].banner_title.replace(/\n/g,"</br>")
+                    h1.about__banner__title.splitter!=about.data.about_banner[0].banner_title_2.replace(/\n/g,"</br>")
+                    h1.about__banner__title.splitter!=about.data.about_banner[0].banner_title_3.replace(/\n/g,"</br>")
+            .about__us__wrapper
+                .about__us__wrapper__inner
+                    .about__us__content
+                        //- p.about__us__paragraph(data-animation="paragraph")!=about.data.about_us[0].about_paragraph.replace(/\n/g,"</br>")

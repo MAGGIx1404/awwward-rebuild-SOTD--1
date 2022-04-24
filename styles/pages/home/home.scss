@@ -1,6 +1,6 @@
 .home {
   background-color: $color-gray;
-  opacity: 1;
+  opacity: 0;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -9,10 +9,12 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
   will-change: opacity;
 
   &--active {
+    opacity: 1;
+
     .home__title {
       .word {
         .char {
