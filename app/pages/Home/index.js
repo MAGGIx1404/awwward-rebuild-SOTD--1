@@ -35,23 +35,6 @@ export default class Home extends Page {
         scale: 1.25
       });
     });
-
-    // this.parallaxEffect = new Ukiyo(this.imgOne, {
-    //   speed: 2.5,
-    //   scale: 1.25
-    // });
-  }
-
-  show() {
-    this.element.classList.add(this.classes.active);
-  }
-
-  async hide() {
-    this.element.classList.remove(this.classes.active);
-
-    await delay(2000);
-
-    return super.hide();
   }
 
   onResize() {

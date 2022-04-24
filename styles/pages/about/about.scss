@@ -94,3 +94,113 @@
     }
   }
 }
+
+.about__us__wrapper {
+  @extend %section;
+
+  &__inner {
+    @extend %innerSection;
+    min-height: fit-content;
+    max-width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    .about__us__content {
+      width: 100%;
+      max-width: 65%;
+
+      p.about__us__paragraph {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 1px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 5rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: rgba($color: #ffffff, $alpha: 0.2);
+          z-index: 1;
+          transform-origin: left;
+          transition: all 0.8s ease;
+          transform: scaleX(0);
+        }
+
+        &.is-inview {
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+
+        li {
+          flex: 0 0 50%;
+          max-width: 50%;
+          width: 100%;
+          height: fit-content;
+          padding: 4rem 0;
+
+          h1 {
+            font-size: 16rem;
+            font-weight: 400;
+            line-height: 1;
+            color: $color-theme;
+          }
+
+          p {
+            margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about__screen {
+  width: 100%;
+  height: 100%;
+  min-height: 125vh;
+  max-height: fit-content;
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 125vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.about__service__wrapper {
+  @extend %section;
+  background: $color-black;
+
+  &__inner {
+    @extend %innerSection;
+  }
+}

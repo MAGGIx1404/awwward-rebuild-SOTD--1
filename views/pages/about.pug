@@ -6,7 +6,6 @@ block variables
 block body
     .about(data-background="" data-color="")
         canvas.webgl-container
-            img(data-src="/1.jpg", alt="")
         //- Scroll wrapper
         .about__wrapper
             .about__banner
@@ -17,4 +16,29 @@ block body
             .about__us__wrapper
                 .about__us__wrapper__inner
                     .about__us__content
-                        //- p.about__us__paragraph(data-animation="paragraph")!=about.data.about_us[0].about_paragraph.replace(/\n/g,"</br>")
+                        p.about__us__paragraph(data-animation="paragraph")!=about.data.about_us[0].about_para.replace(/\n/g,"</br>")
+                        ul.about__us__list(data-scroll data-scroll-offset="50%")
+                            li.about__us__list__item
+                                h1.about__us__list__item__title(data-animation="paragraph") 17+
+                                p.about__us__list__item__text(data-animation="paragraph") Branches
+                            li.about__us__list__item
+                                h1.about__us__list__item__title(data-animation="paragraph") 157
+                                p.about__us__list__item__text(data-animation="paragraph") Projects
+                            li.about__us__list__item
+                                h1.about__us__list__item__title(data-animation="paragraph") 73
+                                p.about__us__list__item__text(data-animation="paragraph") Clients
+                            li.about__us__list__item
+                                h1.about__us__list__item__title(data-animation="paragraph") 350+
+                                p.about__us__list__item__text(data-animation="paragraph") Members
+            .about__screen
+                figure.about__screen__wrapper
+                    img.about__screen__img.parallax__image(data-src="/about_screen.jpg", alt="About Screen Picture")
+            .about__service__wrapper
+                .about__service__wrapper__inner
+                    h1.about__service__wrapper__title(data-animation="paragraph")!=about.data.about_service[0].service_title.replace(/\n/g,"</br>")
+                    .about__service__wrapper__list
+                        .about__service__wrapper__list__title__wrapper
+                            h4.about__service__wrapper__list__title(data-animation="paragraph") Our Service
+                        .about__service__wrapper__list__content__wrapper
+                            p.about__service__wrapper__paragraph(data-animation="paragraph")!=about.data.about_service[0].service_para_1.replace(/\n/g,"</br>")
+                            p.about__service__wrapper__paragraph(data-animation="paragraph")!=about.data.about_service[0].service_para_2.replace(/\n/g,"</br>")

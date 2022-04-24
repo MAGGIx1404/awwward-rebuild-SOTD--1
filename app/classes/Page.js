@@ -13,6 +13,8 @@ import FadeIn from "animations/FadeIn";
 import AsyncLoad from "classes/AsyncLoad";
 import locoScroll from "utils/locoscroll";
 
+import { delay } from "utils/math";
+
 export default class Page {
   constructor({ classes, id, element, elements }) {
     this.classes = {
@@ -25,6 +27,7 @@ export default class Page {
       animationsParallax: '[data-animation="parallax"]',
       animationsFadeIn: '[data-animation="p-fade-in"]',
       imagePreloaders: "[data-src]",
+      overlayLines: ".overlay__line",
 
       ...elements
     };
@@ -139,7 +142,12 @@ export default class Page {
     if (onPreloaded) {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
+        this.animationIn.set(this.selectorChildren.overlayLines, {
+          y: "-100%",
+          opacity: 0
+        });
         this.animationIn.call(() => {
+          this.element.classList.add(this.classes.active);
           this.addEventListeners();
           resolve();
         });
@@ -147,19 +155,14 @@ export default class Page {
     } else {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
-        this.animationIn.fromTo(
-          this.element,
-          2,
-          {
-            // autoAlpha: 0
-            opacity: 0
-          },
-          {
-            // autoAlpha: 1
-            opacity: 1
-          }
-        );
+        this.animationIn.to(this.selectorChildren.overlayLines, 0.4, {
+          y: "100%",
+          opacity: 0,
+          stagger: 0.1,
+          ease: "Power2.easeIn"
+        });
         this.animationIn.call(() => {
+          this.element.classList.add(this.classes.active);
           this.addEventListeners();
           this.onResize();
           resolve();
@@ -176,9 +179,21 @@ export default class Page {
       each(this.animations, (animation) => {
         animation.animateOut();
       });
+      this.element.classList.remove(this.classes.active);
+
       this.destroy();
       window.ASSETS = [];
       this.animateOut = gsap.timeline();
+      this.animateOut.set(this.selectorChildren.overlayLines, {
+        y: "-100%",
+        opacity: 0
+      });
+      this.animateOut.to(this.selectorChildren.overlayLines, 0.4, {
+        y: "0",
+        opacity: 1,
+        stagger: 0.1,
+        ease: "Power2.easeOut"
+      });
       this.animateOut.call(() => {
         resolve();
       });

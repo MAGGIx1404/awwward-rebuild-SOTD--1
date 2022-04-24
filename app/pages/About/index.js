@@ -3,6 +3,7 @@ import Page from "classes/Page";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { delay } from "utils/math";
+import Ukiyo from "ukiyojs";
 
 export default class About extends Page {
   constructor() {
@@ -13,25 +14,31 @@ export default class About extends Page {
       id: "about",
       element: ".about",
       elements: {
-        wrapper: ".about__wrapper" // scroller
+        wrapper: ".about__wrapper", // scroller
+        about_pics: ".parallax__image"
       }
     });
   }
 
   create() {
     super.create();
+    this.parallax();
   }
 
-  show() {
-    this.element.classList.add(this.classes.active);
-  }
+  parallax() {
+    // this.imgOne = [...this.elements.about_pics];
+    this.imgOne = this.elements.about_pics;
 
-  async hide() {
-    this.element.classList.remove(this.classes.active);
-
-    await delay(2000);
-
-    return super.hide();
+    this.parallaxEffect = new Ukiyo(this.imgOne, {
+      speed: 2,
+      scale: 1.4
+    });
+    // this.imgOne.forEach((ele) => {
+    //   this.parallaxEffect = new Ukiyo(ele, {
+    //     speed: 2.5,
+    //     scale: 1.3
+    //   });
+    // });
   }
 
   onResize() {
