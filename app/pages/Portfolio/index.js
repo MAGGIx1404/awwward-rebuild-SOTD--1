@@ -5,56 +5,32 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { delay } from "utils/math";
 import Ukiyo from "ukiyojs";
 
-export default class About extends Page {
+export default class Portfolio extends Page {
   constructor() {
     super({
       classes: {
-        active: "about--active"
+        active: "portfolio--active"
       },
-      id: "about",
-      element: ".about",
+      id: "portfolio",
+      element: ".portfolio",
       elements: {
-        wrapper: ".about__wrapper", // scroller
-        about_pics: ".parallax__image",
-        // sliders
-        menu: ".about__team__menu",
-        items: ".menu__item",
-        images: ".menu__item__pic"
+        wrapper: ".portfolio__wrapper", // scroller
+        links_wrapper: ".portfolio__title__link",
+        menu: ".portfolio__menu",
+        items: ".portfolio__menu__item"
       }
     });
   }
 
   create() {
     super.create();
-    this.parallax();
-    this.slider();
+    this.infiniteList();
   }
 
-  parallax() {
-    // this.imgOne = [...this.elements.about_pics];
-    this.imgOne = this.elements.about_pics;
-
-    this.parallaxEffect = new Ukiyo(this.imgOne, {
-      speed: 2,
-      scale: 1.4
-    });
-    // this.imgOne.forEach((ele) => {
-    //   this.parallaxEffect = new Ukiyo(ele, {
-    //     speed: 2,
-    //     scale: 1.4
-    //   });
-    // });
-  }
-
-  onResize() {
-    super.onResize();
-  }
-
-  // team slider
-  slider() {
-    let menuWidth = this.elements.menu.clientWidth;
-    let itemWidth = this.elements.items[0].clientWidth;
-    let wrapWidth = this.elements.items.length * itemWidth;
+  infiniteList() {
+    let menuHeight = this.elements.menu.clientHeight;
+    let itemHeight = this.elements.items[0].clientHeight;
+    let wrapHeight = this.elements.items.length * itemHeight;
 
     let scrollSpeed = 0;
     let oldScrollY = 0;
@@ -67,15 +43,15 @@ export default class About extends Page {
 
     const dispose = (scroll) => {
       gsap.set(this.elements.items, {
-        x: (i) => {
-          return i * itemWidth + scroll;
+        y: (i) => {
+          return i * itemHeight + scroll;
         },
         modifiers: {
-          x: (x, target) => {
+          y: (y) => {
             const s = gsap.utils.wrap(
-              -itemWidth,
-              wrapWidth - itemWidth,
-              parseInt(x)
+              -itemHeight,
+              wrapHeight - itemHeight,
+              parseInt(y)
             );
             return `${s}px`;
           }
@@ -85,22 +61,22 @@ export default class About extends Page {
     dispose(0);
 
     const handleMouseWheel = (e) => {
-      scrollY -= e.deltaY * 0.9;
+      scrollY -= e.deltaY * 3;
     };
 
     let touchStart = 0;
-    let touchX = 0;
+    let touchY = 0;
     let isDragging = false;
     const handleTouchStart = (e) => {
-      touchStart = e.clientX || e.touches[0].clientX;
+      touchStart = e.clientY || e.touches[0].clientY;
       isDragging = true;
       this.elements.menu.classList.add("is-dragging");
     };
     const handleTouchMove = (e) => {
       if (!isDragging) return;
-      touchX = e.clientX || e.touches[0].clientX;
-      scrollY += (touchX - touchStart) * 2.5;
-      touchStart = touchX;
+      touchY = e.clientY || e.touches[0].clientY;
+      scrollY += (touchY - touchStart) * 10;
+      touchStart = touchY;
     };
     const handleTouchEnd = () => {
       isDragging = false;
@@ -123,25 +99,28 @@ export default class About extends Page {
     });
 
     window.addEventListener("resize", () => {
-      menuWidth = this.elements.menu.clientWidth;
-      itemWidth = this.elements.items[0].clientWidth;
-      wrapWidth = this.elements.items.length * itemWidth;
+      menuHeight = this.elements.menu.clientHeight;
+      itemHeight = this.elements.items[0].clientHeight;
+      wrapHeight = this.elements.items.length * itemHeight;
     });
 
     const render = () => {
       requestAnimationFrame(render);
-      y = lerp(y, scrollY, 0.1);
+      y = lerp(y, scrollY, 0.04);
       dispose(y);
 
       scrollSpeed = y - oldScrollY;
       oldScrollY = y;
 
-      gsap.to(this.elements.items, {
-        skewX: -scrollSpeed * 0.2,
-        rotate: scrollSpeed * 0.01
-        // scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.003
-      });
+      // gsap.to(this.elements.items, {
+      //   scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.0025,
+      //   rotate: scrollSpeed * 0.2
+      // });
     };
     render();
+  }
+
+  onResize() {
+    super.onResize();
   }
 }

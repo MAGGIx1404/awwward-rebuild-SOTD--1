@@ -76,17 +76,17 @@ app.get("/about", async (req, res) => {
   });
 });
 
-// // Portfolio page
-// app.get("/portfolio", async (req, res) => {
-//   const defaults = await handleRequest(client);
-//   const portfolio = await client.getSingle("portfolio");
-//   const assets = [];
-//   return res.render("pages/portfolio", {
-//     portfolio,
-//     ...defaults,
-//     assets
-//   });
-// });
+// Portfolio page
+app.get("/portfolio", async (req, res) => {
+  // const defaults = await handleRequest(client);
+  const portfolio = await client.getSingle("portfolio");
+  const assets = [];
+  return res.render("pages/portfolio", {
+    portfolio,
+    // ...defaults,
+    assets
+  });
+});
 
 // app.get("/work/:uid", async (req, res) => {
 //   const uid = req.params.uid;

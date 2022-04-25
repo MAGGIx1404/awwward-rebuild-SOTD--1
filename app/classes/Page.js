@@ -157,7 +157,7 @@ export default class Page {
         this.animationIn = gsap.timeline();
         this.animationIn.to(this.selectorChildren.overlayLines, 0.4, {
           y: "100%",
-          opacity: 0,
+          opacity: 1,
           stagger: 0.1,
           ease: "Power2.easeIn"
         });
@@ -186,7 +186,7 @@ export default class Page {
       this.animateOut = gsap.timeline();
       this.animateOut.set(this.selectorChildren.overlayLines, {
         y: "-100%",
-        opacity: 0
+        opacity: 1
       });
       this.animateOut.to(this.selectorChildren.overlayLines, 0.4, {
         y: "0",

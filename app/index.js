@@ -1,5 +1,6 @@
 import Home from "pages/Home";
 import About from "pages/About";
+import Portfolio from "pages/Portfolio";
 import Preloader from "components/Preloader";
 // import Transition from "components/Transition";
 import each from "lodash/each";
@@ -59,8 +60,8 @@ class App {
   createPages() {
     this.pages = {
       home: new Home(),
-      about: new About()
-      // portfolio: new Portfolio(),
+      about: new About(),
+      portfolio: new Portfolio()
       // work: new Work()
     };
 

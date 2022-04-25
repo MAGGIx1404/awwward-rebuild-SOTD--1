@@ -1,0 +1,46 @@
+extends ../base.pug
+
+block variables
+    - var template = 'portfolio'
+
+block body
+    .portfolio(data-background="" data-color="")
+        canvas.webgl-container
+                img(data-src="/1.jpg", alt="")
+        //- Scroll wrapper
+        .portfolio__wrapper
+            .portfolio__banner
+                .portfolio__menu
+                    ul.portfolio__menu__wrapper
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work1.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/1.jpg", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work2.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/2.jpg", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work3.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/3.webp", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work4.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/4.jpg", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work5.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/5.jpg", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work6.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/6.jpg", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work7.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/7.jpg", alt="error")
+                        li.portfolio__menu__item
+                            a.portfolio__menu__item__link.splitter(href="/")!=portfolio.data.portfolio_list[0].work8.replace(/\n/g,"</br>")
+                            figure.portfolio__menu__item__image__wrapper
+                                img.portfolio__menu__item__image(data-src="/cases/8.jpg", alt="error")

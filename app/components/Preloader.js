@@ -11,7 +11,9 @@ export default class Preloader extends Component {
         title: ".preloader__text",
         number: ".preloader__number",
         images: document.querySelectorAll("img"),
-        numberText: ".preloader__number__text"
+        numberText: ".preloader__number__text",
+        preloader_line: ".preloader__line",
+        preloader_span: ".preloader__text__span"
       }
     });
 
@@ -45,26 +47,43 @@ export default class Preloader extends Component {
       this.animateOut = gsap.timeline({
         delay: 1
       });
+      this.animateOut.to(this.elements.numberText, {
+        y: "100%",
+        stagger: "0.1",
+        duration: 1.5,
+        ease: "expo.out"
+      });
       this.animateOut.to(
-        this.elements.numberText,
+        this.elements.preloader_span,
+        1,
         {
-          y: "-100%",
-          stagger: "0.1",
-          duration: 1.5,
-          ease: "expo.out"
+          y: "0",
+          stagger: 0.1,
+          ease: "Power2.easeIn"
         },
-        "-=1.4"
+        "-=1.5"
       );
-
+      this.animateOut.to(this.elements.preloader_span, 1, {
+        y: "100%",
+        stagger: 0.1,
+        ease: "Power2.easeIn"
+      });
       this.animateOut.to(
-        this.element,
+        this.elements.preloader_line,
+        1,
         {
-          opacity: 0,
-          duration: 1,
-          ease: "expo.out"
+          y: "100%",
+          opacity: 1,
+          stagger: 0.1,
+          ease: "Power2.easeIn"
         },
         "-=1"
       );
+      this.animateOut.to(this.element, {
+        opacity: 0,
+        duration: 1,
+        ease: "expo.out"
+      });
 
       this.animateOut.call(() => {
         this.emit("completed");

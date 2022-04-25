@@ -1,0 +1,131 @@
+.portfolio {
+  background-color: $color-gray;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+
+  &--active {
+    opacity: 1;
+
+    .portfolio__menu__item__link {
+      .word {
+        .char {
+          transform: translateY(0) !important;
+        }
+      }
+    }
+
+    .portfolio__menu__item {
+      figure {
+        img {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.portfolio__wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.portfolio__banner {
+  width: 100%;
+  height: 100vh;
+}
+
+.portfolio__menu {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  ul {
+    width: 100%;
+    height: 100vh;
+
+    li {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: fit-content;
+      text-align: left;
+      padding: 0 15vw;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      figure {
+        width: 24rem;
+        height: 12rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity 1s ease;
+          transition-delay: 1s;
+        }
+      }
+
+      a {
+        font-family: $font-b !important;
+        overflow: hidden;
+        position: relative;
+        margin-right: 2rem;
+
+        &:hover {
+          .word {
+            .char {
+              color: $color-theme;
+            }
+          }
+        }
+
+        .whitespace {
+          padding: 0.5rem;
+        }
+
+        .word {
+          overflow: hidden;
+          line-height: 1;
+          .char {
+            line-height: 1;
+            font-size: 16rem;
+            font-weight: 400;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            transition-delay: calc(0ms + var(--char-index) * 15ms) !important;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
