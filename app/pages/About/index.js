@@ -31,19 +31,19 @@ export default class About extends Page {
   }
 
   parallax() {
-    // this.imgOne = [...this.elements.about_pics];
-    this.imgOne = this.elements.about_pics;
+    this.imgOne = [...this.elements.about_pics];
+    // this.imgOne = this.elements.about_pics;
 
-    this.parallaxEffect = new Ukiyo(this.imgOne, {
-      speed: 2,
-      scale: 1.4
-    });
-    // this.imgOne.forEach((ele) => {
-    //   this.parallaxEffect = new Ukiyo(ele, {
-    //     speed: 2,
-    //     scale: 1.4
-    //   });
+    // this.parallaxEffect = new Ukiyo(this.imgOne, {
+    //   speed: 2,
+    //   scale: 1.4
     // });
+    this.imgOne.forEach((ele) => {
+      this.parallaxEffect = new Ukiyo(ele, {
+        speed: 2,
+        scale: 1.4
+      });
+    });
   }
 
   onResize() {

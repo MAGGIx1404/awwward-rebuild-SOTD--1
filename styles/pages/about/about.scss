@@ -16,6 +16,13 @@
     opacity: 1;
 
     .about__banner {
+      .about__banner__picture__wrapper {
+        figure {
+          &::after {
+            transform: scaleY(0);
+          }
+        }
+      }
       &__inner {
         h1 {
           .word {
@@ -65,6 +72,45 @@
     pointer-events: none;
   }
 
+  &__picture__wrapper {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    z-index: -1;
+    overflow: hidden;
+
+    figure {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color-gray;
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: transform 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        z-index: 1;
+      }
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+      }
+    }
+  }
+
   &__inner {
     max-width: 90%;
     width: 100%;
@@ -81,6 +127,7 @@
       font-weight: 400;
       line-height: 1;
       letter-spacing: 1px;
+      mix-blend-mode: difference;
 
       .word {
         overflow: hidden;

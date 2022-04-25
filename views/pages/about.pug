@@ -9,7 +9,9 @@ block body
         //- Scroll wrapper
         .about__wrapper
             .about__banner
-                canvas.scene#scene
+                .about__banner__picture__wrapper
+                    figure.banner__picture__wrapper__inner
+                        img.banner__picture.parallax__image(data-src="/about_banner.jpg", alt="error")
                 .about__banner__inner
                     h1.about__banner__title.splitter!=about.data.about_banner[0].banner_title.replace(/\n/g,"</br>")
                     h1.about__banner__title.splitter!=about.data.about_banner[0].banner_title_2.replace(/\n/g,"</br>")

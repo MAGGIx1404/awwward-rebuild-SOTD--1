@@ -1,0 +1,35 @@
+extends ../base.pug
+
+block variables
+    - var template = 'contact'
+
+block body
+    .contact(data-background="" data-color="")
+        canvas.webgl-container
+        //- Scroll wrapper
+        .contact__wrapper
+            .contact__banner__wrapper
+                .contact__banner__picture__wrapper__2
+                    .contact__banner__picture__wrapper__2__inner
+                        figure.banner__picture__wrapper__inner
+                            img.banner__picture.parallax__image(data-src="/contact_banner.jpg", alt="error")
+                .contact__banner__wrapper__inner
+                    .contact__banner__title__wrapper
+                        h1.contact__banner__title.splitter!=contact.data.contact_banner[0].banner_title.replace(/\n/g,"</br>")
+                .contact__banner__main__wrapper
+                    .contact__banner__main__wrapper__inner
+                        .contact__banner__form__wrapper
+                                    h4.contact__form__title!=contact.data.contact_banner[0].form_title.replace(/\n/g,"</br>")
+                                    form.contact__form(action="/")
+                                        input.contact__form__company__name(type="text" placeholder="Company Name" name="company" required)
+                                        input.contact__form__name(type="text" placeholder="Your Name" name="name" required)
+                                        input.contact__form__number(type="text" placeholder="Phone Number" name="number" required)
+                                        input.contact__form__email(type="text" placeholder="E-mail" name="mail" required)
+                                        input.contact__form__subject(type="text" placeholder="Subject" name="subject" required)
+                                        textarea#contact__form__content__wrapper.contact__form__content__wrapper(name="form_content" placeholder="Your Message" , cols="30", rows="10")
+                                        input#submit__btn(type="submit", value="SUBMIT")
+                        .contact__banner__picture__wrapper
+                                    figure.contact__banner__picture__wrapper__inner
+                                        img.contact__banner__picture.parallax__image(data-src="/contact_screen.jpg", alt="Contact Picture")
+
+            include ../partials/footer
