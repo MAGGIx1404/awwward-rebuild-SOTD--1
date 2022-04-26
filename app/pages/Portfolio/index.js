@@ -112,10 +112,10 @@ export default class Portfolio extends Page {
       scrollSpeed = y - oldScrollY;
       oldScrollY = y;
 
-      // gsap.to(this.elements.items, {
-      //   scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.0025,
-      //   rotate: scrollSpeed * 0.2
-      // });
+      gsap.to(this.elements.items, {
+        scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.0015,
+        rotate: scrollSpeed * 0.05
+      });
     };
     render();
   }

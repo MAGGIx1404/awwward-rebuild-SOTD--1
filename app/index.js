@@ -2,6 +2,7 @@ import Home from "pages/Home";
 import About from "pages/About";
 import Portfolio from "pages/Portfolio";
 import Contact from "pages/Contact";
+import Work from "pages/Work";
 import Preloader from "components/Preloader";
 // import Transition from "components/Transition";
 import each from "lodash/each";
@@ -63,8 +64,8 @@ class App {
       home: new Home(),
       about: new About(),
       portfolio: new Portfolio(),
-      contact: new Contact()
-      // work: new Work()
+      contact: new Contact(),
+      work: new Work()
     };
 
     this.page = this.pages[this.template];
@@ -123,12 +124,12 @@ class App {
       this.content.innerHTML = divContent.innerHTML;
       this.page = this.pages[this.template];
 
-      if (this.template === "work") {
-        const preloadImageToAssets = this.content.querySelector(
-          ".work__banner__wrapper img"
-        );
-        window.ASSETS.unshift(preloadImageToAssets.getAttribute("data-src"));
-      }
+      // if (this.template === "work") {
+      //   const preloadImageToAssets = this.content.querySelector(
+      //     ".work__banner__wrapper img"
+      //   );
+      //   window.ASSETS.unshift(preloadImageToAssets.getAttribute("data-src"));
+      // }
       this.preloadingOnPageTransition();
       //   this.page.create();
       //   this.onResize();
