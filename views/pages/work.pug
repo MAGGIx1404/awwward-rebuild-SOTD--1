@@ -63,6 +63,6 @@ block body
                     img.work__next__bg__picture.parallax__image(data-src=work.data.next_section[0].next_pic.url, alt=work.data.next_section[0].next_pic.alt)
                 .work__next__wrapper__inner
                     h6.work__next__title(data-animation="paragraph") Next Project
-                    a.work__next__btn(href="/" data-animation="paragraph")!=work.data.next_section[0].next_title.replace(/\n/g,"</br>")
+                    a.work__next__btn(href=`/work/${work.data.next_section[0].next_title.uid}` data-animation="paragraph")!=work.data.next_section[0].next_namer.replace(/\n/g,"</br>")
 
             include ../partials/footer

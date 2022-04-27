@@ -84,16 +84,6 @@
     background: $color-theme;
     opacity: 0;
     pointer-events: all;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    p {
-      font-size: 20rem;
-      font-weight: 400;
-      font-family: $font-b !important;
-      color: $color-white;
-      line-height: 1;
-    }
+    transform: scaleX(0);
   }
 }

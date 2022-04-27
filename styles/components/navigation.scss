@@ -28,6 +28,11 @@
     @extend %description-32;
     font-weight: 700;
     font-family: $font-b;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-theme;
+    }
   }
 }
 

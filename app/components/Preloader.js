@@ -64,7 +64,7 @@ export default class Preloader extends Component {
         "-=1.5"
       );
       this.animateOut.to(this.elements.preloader_span, 1, {
-        y: "100%",
+        x: "200%",
         stagger: 0.1,
         ease: "Power2.easeIn"
       });

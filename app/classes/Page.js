@@ -143,7 +143,7 @@ export default class Page {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
         this.animationIn.set(this.selectorChildren.overlayLines, {
-          y: "-100%",
+          scaleX: 0,
           opacity: 0
         });
         this.animationIn.call(() => {
@@ -155,8 +155,11 @@ export default class Page {
     } else {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
+        this.animationIn.set(this.selectorChildren.overlayLines, {
+          transformOrigin: "right"
+        });
         this.animationIn.to(this.selectorChildren.overlayLines, 0.4, {
-          y: "100%",
+          scaleX: 0,
           opacity: 1,
           stagger: 0.1,
           ease: "Power2.easeIn"
@@ -185,11 +188,12 @@ export default class Page {
       window.ASSETS = [];
       this.animateOut = gsap.timeline();
       this.animateOut.set(this.selectorChildren.overlayLines, {
-        y: "-100%",
+        transformOrigin: "left",
+        scaleX: 0,
         opacity: 1
       });
       this.animateOut.to(this.selectorChildren.overlayLines, 0.4, {
-        y: "0",
+        scaleX: 1,
         opacity: 1,
         stagger: 0.1,
         ease: "Power2.easeOut"
