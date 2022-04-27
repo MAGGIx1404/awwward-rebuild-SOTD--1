@@ -28,6 +28,7 @@ class App {
     // this.createHamburger();
     this.createPages();
     magnetBtn();
+    this.hambMenu();
     this.addLinkListeners();
     this.addEventListeners();
     this.update();
@@ -186,6 +187,24 @@ class App {
   addEventListeners() {
     window.addEventListener("resize", this.handleOnResize);
     window.addEventListener("popstate", this.handleOnPopState);
+  }
+
+  // hamb menu
+
+  hambMenu() {
+    let hamb__btn = document.querySelector(".hamb__btn");
+    let hamb__menu = document.querySelector(".hamb__menu");
+    let hamb__links = [...document.querySelectorAll(".hamb__menu__link")];
+
+    hamb__btn.addEventListener("click", function () {
+      hamb__menu.classList.toggle("active");
+    });
+
+    hamb__links.forEach((el) => {
+      el.addEventListener("click", function () {
+        hamb__menu.classList.remove("active");
+      });
+    });
   }
 }
 

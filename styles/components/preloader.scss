@@ -42,6 +42,14 @@
         align-items: center;
         justify-content: center;
 
+        @include media("<tablet") {
+          height: 25rem;
+        }
+
+        @include media("<phone") {
+          height: 15rem;
+        }
+
         span {
           position: absolute;
           font-size: 35rem;
@@ -49,6 +57,13 @@
           font-family: $font-b !important;
           line-height: 1;
           transform: translateY(-100%);
+
+          @include media("<tablet") {
+            font-size: 25rem;
+          }
+          @include media("<phone") {
+            font-size: 15rem;
+          }
         }
       }
     }

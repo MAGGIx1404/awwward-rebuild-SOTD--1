@@ -32,6 +32,10 @@ footer.footer__wrapper {
           font-family: $font-b !important;
           transition: color 0.5s;
 
+          @include media("<tablet") {
+            font-size: 3rem;
+          }
+
           &:hover {
             color: $color-theme;
           }
@@ -43,6 +47,10 @@ footer.footer__wrapper {
           line-height: 1;
           margin-top: 1rem;
           color: rgba($color: #ffffff, $alpha: 0.25);
+
+          @include media("<phone") {
+            font-size: 1.2rem;
+          }
         }
       }
 
@@ -54,6 +62,10 @@ footer.footer__wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: space-around;
+
+        @include media("<phone") {
+          justify-content: space-between;
+        }
 
         ul {
           display: flex;
@@ -72,6 +84,10 @@ footer.footer__wrapper {
               &:hover {
                 color: $color-theme;
               }
+
+              @include media("<phone") {
+                font-size: 1.2rem;
+              }
             }
           }
 
@@ -87,6 +103,10 @@ footer.footer__wrapper {
                 }
                 &:nth-of-type(3) {
                   margin-top: 3rem;
+                }
+
+                @include media("<phone") {
+                  font-size: 1.2rem;
                 }
               }
             }
@@ -145,9 +165,17 @@ footer.footer__wrapper {
   padding: 5rem 0;
   border-top: 1px solid rgba($color: #ffffff, $alpha: 0.2);
 
+  @include media("<phone") {
+    padding: 2.5rem 0;
+  }
+
   p {
     font-weight: 400;
     color: rgba($color: #ffffff, $alpha: 0.2);
+
+    @include media("<phone") {
+      font-size: 1rem;
+    }
 
     a {
       color: rgba($color: #ffffff, $alpha: 0.4);

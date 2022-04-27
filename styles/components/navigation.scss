@@ -43,6 +43,10 @@
   height: fit-content;
   @extend %flex-row-space;
 
+  @include media("<tablet") {
+    display: none;
+  }
+
   & .nav__btn {
     @extend %description-14;
     font-weight: 400;
@@ -60,4 +64,100 @@
   display: inline-block;
   pointer-events: all;
   padding: 1rem;
+}
+
+button.hamb__btn {
+  width: 7rem;
+  height: 7rem;
+  position: fixed;
+  top: 0.5rem;
+  right: 5vw;
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  z-index: 12;
+  opacity: 0;
+  visibility: hidden;
+
+  @include media("<tablet") {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    .dot {
+      background-color: $color-theme;
+    }
+  }
+
+  .dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: $color-white;
+    transition: all 0.3s;
+  }
+}
+
+.hamb__menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: $color-black;
+  overflow: hidden;
+  transform: translateY(-100%);
+  transition: all 0.7s ease;
+
+  &.active {
+    transform: translateY(0) !important;
+
+    a {
+      .word {
+        .char {
+          transform: translateY(0) !important;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      font-size: 10rem;
+      font-weight: 400;
+      font-family: $font-b;
+      line-height: 1;
+      letter-spacing: 1px;
+
+      .word {
+        overflow: hidden;
+
+        .char {
+          transition-delay: calc(0ms + var(--char-index) * 25ms);
+          transform: translateY(100%);
+          transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+            color 0.1s;
+        }
+      }
+
+      &:not(:nth-of-type(1)) {
+        margin-top: 3rem;
+      }
+
+      &:hover {
+        color: $color-theme;
+      }
+    }
+  }
 }

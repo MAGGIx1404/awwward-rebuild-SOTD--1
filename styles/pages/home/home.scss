@@ -48,6 +48,13 @@
   width: 100%;
   min-height: 150vh;
   padding: 10vh 0;
+
+  @media only screen and (max-width: 500px) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .home__banner__inner {
@@ -63,6 +70,12 @@
   width: 70%;
   font-family: $font-b;
 
+  @include media("<phone") {
+    br {
+      display: none !important;
+    }
+  }
+
   .whitespace {
     padding: 1rem;
   }
@@ -77,6 +90,14 @@
       transform: translateY(100%);
       transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95),
         color 0.1s;
+
+      @include media("<tablet") {
+        font-size: 10rem;
+      }
+
+      @include media("<phone") {
+        font-size: 8rem;
+      }
     }
   }
 
@@ -106,6 +127,11 @@
     width: 80vw;
     overflow: hidden;
 
+    @include media("<phone") {
+      width: 100vw;
+      min-height: 110vh;
+    }
+
     img {
       position: absolute;
       width: 100%;
@@ -123,16 +149,45 @@
   display: flex;
   justify-content: flex-end;
 
+  @include media("<tablet") {
+    max-height: fit-content;
+    height: fit-content;
+  }
+
   .home__screen__content__inner {
     max-width: 80%;
     width: 100%;
     height: 100vh;
     padding: 10vh 0;
 
+    @include media("<phone") {
+      max-width: 100%;
+      padding: 10vh 5vw;
+    }
+
+    @include media("<tablet") {
+      height: fit-content;
+    }
+
     p.home__screen__content__paragraph {
       font-size: 3rem;
       font-weight: 400;
       line-height: 1.4;
+
+      @include media("<tablet") {
+        font-size: 2rem;
+      }
+
+      @include media("<phone") {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        line-height: 1.8;
+        font-weight: 200 !important;
+
+        br {
+          display: none;
+        }
+      }
     }
 
     .lists__wrapper {
@@ -143,6 +198,10 @@
       justify-content: space-between;
       padding: 10vh 5vw 10vh 0;
       position: relative;
+
+      @include media("<phone") {
+        flex-wrap: wrap;
+      }
 
       &.is-inview {
         &::after {
@@ -169,11 +228,28 @@
       ul.service__list {
         margin-top: 4rem;
 
+        @include media("<phone") {
+          max-width: 50%;
+          flex: 0 0 50%;
+          width: 100%;
+          height: fit-content;
+        }
+
         li.service__list__item {
           p.service__list__item__content {
             font-size: 2rem;
             font-weight: 400;
             line-height: 2.5;
+
+            @include media("<tablet") {
+              font-size: 1.5rem;
+              line-height: 2.4;
+            }
+            @include media("<phone") {
+              font-size: 1.6rem;
+              letter-spacing: 1px;
+              font-weight: 200 !important;
+            }
           }
         }
       }
@@ -186,6 +262,10 @@
 
   &.magnet {
     padding: 2rem 0 !important;
+
+    @include media("<phone") {
+      padding: 0.5rem 0 !important;
+    }
   }
 
   a.home__screen__content__link {
@@ -194,6 +274,13 @@
     padding: 2rem 2.5rem;
     border-radius: 30px;
     background: $color-black;
+
+    @include media("<phone") {
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      font-weight: 200 !important;
+      padding: 1.75rem 1.8rem;
+    }
 
     .word {
       .char {
@@ -214,8 +301,16 @@
 .home__work__wrapper {
   @extend %section;
 
+  @media only screen and (max-width: 500px) {
+    padding: 0 0 10vh 0 !important;
+  }
+
   .home__work__inner__wrapper {
     @extend %innerSection;
+
+    @include media("<phone") {
+      max-width: 90%;
+    }
 
     .home__work__title__wrapper {
       width: 100%;
@@ -228,6 +323,10 @@
         font-weight: 400;
         line-height: 1;
         letter-spacing: 1px;
+
+        @include media("<phone") {
+          font-size: 8rem;
+        }
       }
     }
 
@@ -282,6 +381,10 @@
             font-family: $font-b;
             mix-blend-mode: difference;
 
+            @include media("<phone") {
+              font-size: 8rem;
+            }
+
             &::after {
               content: "";
               position: absolute;
@@ -325,6 +428,10 @@
 
           &.magnet {
             padding: 2rem 0 !important;
+
+            @include media("<phone") {
+              padding: 0.5rem 0 !important;
+            }
           }
 
           a.home__work__link {
@@ -333,6 +440,13 @@
             padding: 2rem 2.5rem;
             border-radius: 30px;
             background: $color-black;
+
+            @include media("<phone") {
+              font-size: 1.3rem;
+              letter-spacing: 1px;
+              font-weight: 200 !important;
+              padding: 1.75rem 1.8rem;
+            }
 
             .word {
               .char {
@@ -362,6 +476,10 @@
     height: fit-content !important;
     min-height: fit-content !important;
 
+    @include media("<phone") {
+      max-width: 90%;
+    }
+
     .home__partner__title__wrapper {
       width: 100%;
       height: fit-content;
@@ -372,6 +490,10 @@
         font-weight: 400;
         letter-spacing: 1px;
         line-height: 1;
+
+        @include media("<phone") {
+          font-size: 8rem;
+        }
       }
     }
 
@@ -382,6 +504,20 @@
         font-size: 3rem;
         font-weight: 400;
         line-height: 1.6;
+
+        @include media("<tablet") {
+          font-size: 2rem;
+
+          br {
+            display: none !important;
+          }
+        }
+
+        @include media("<phone") {
+          font-size: 1.6rem;
+          letter-spacing: 1px;
+          font-weight: 200 !important;
+        }
       }
     }
   }
@@ -422,6 +558,15 @@
     @extend %innerSection;
     padding: 15vh 0 !important;
 
+    @include media("<phone") {
+      max-width: 90%;
+    }
+
+    @media only screen and (max-width: 500px) {
+      padding: 4vh 0 !important;
+      min-height: fit-content;
+    }
+
     .home__pride__content {
       width: 100%;
       height: fit-content;
@@ -429,17 +574,34 @@
       align-items: flex-start;
       justify-content: space-between;
 
+      @include media("<phone") {
+        flex-wrap: wrap;
+      }
+
       .home__pride__title__wrapper {
         flex: 0 0 45%;
         max-width: 45%;
         width: 100%;
         height: fit-content;
 
+        @include media("<phone") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
         h1 {
           font-size: 10rem;
           font-weight: 400;
           letter-spacing: 1px;
           line-height: 1;
+
+          @include media("<phone") {
+            font-size: 8rem;
+
+            br {
+              display: none;
+            }
+          }
         }
       }
 
@@ -449,11 +611,31 @@
         width: 100%;
         height: fit-content;
 
+        @include media("<phone") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
         p {
           font-size: 3rem;
           font-weight: 400;
           line-height: 1.6;
           color: $color-light;
+
+          @include media("<tablet") {
+            font-size: 2rem;
+
+            br {
+              display: none !important;
+            }
+          }
+
+          @include media("<phone") {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            font-weight: 200 !important;
+            margin-top: 2rem !important;
+          }
         }
       }
     }
@@ -503,6 +685,15 @@
           max-width: 30%;
           width: 100%;
 
+          @include media("<tablet") {
+            font-size: 2rem;
+          }
+
+          @include media("<phone") {
+            font-size: 1.6rem;
+            letter-spacing: 1.4px;
+          }
+
           &:nth-of-type(2) {
             font-family: $font-b !important;
             text-align: center;
@@ -511,6 +702,13 @@
           &:nth-of-type(3) {
             font-size: 8rem;
             text-align: end;
+
+            @include media("<tablet") {
+              font-size: 4rem;
+            }
+            @include media("<phone") {
+              font-size: 3.5rem;
+            }
           }
         }
       }
