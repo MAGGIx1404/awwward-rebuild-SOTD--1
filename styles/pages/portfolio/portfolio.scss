@@ -65,6 +65,11 @@
     width: 100%;
     height: 100vh;
 
+    @include media("<phone") {
+      height: fit-content;
+      margin: auto 0;
+    }
+
     li {
       position: absolute;
       z-index: 1;
@@ -79,6 +84,13 @@
       align-items: center;
       justify-content: flex-start;
 
+      @include media("<tablet") {
+        padding: 0 5vw;
+      }
+      @include media("<phone") {
+        height: 18rem;
+      }
+
       figure {
         width: 24rem;
         height: 12rem;
@@ -87,6 +99,10 @@
         transition: opacity 1s ease;
         overflow: hidden;
         position: relative;
+
+        @include media("<phone") {
+          display: none;
+        }
 
         &::after {
           content: "";
@@ -152,6 +168,10 @@
             transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
             transition-delay: calc(0ms + var(--char-index) * 15ms) !important;
             letter-spacing: 1px;
+
+            @include media("<tablet") {
+              font-size: 8rem;
+            }
           }
         }
       }

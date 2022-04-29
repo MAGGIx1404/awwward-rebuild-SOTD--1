@@ -114,6 +114,10 @@
       line-height: 1;
       letter-spacing: 1px;
       mix-blend-mode: difference;
+
+      @include media("<tablet") {
+        font-size: 10rem;
+      }
     }
 
     h4.work__banner__role {
@@ -122,6 +126,9 @@
       letter-spacing: 1px;
       line-height: 1;
       color: $color-theme;
+      @include media("<tablet") {
+        font-size: 4rem;
+      }
     }
 
     h1,
@@ -154,15 +161,31 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @include media("<tablet") {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
     .work__info__left {
       flex: 0 0 30%;
       max-width: 30%;
       color: $color-theme;
+
+      @include media("<tablet") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
 
     .work__info__right {
       flex: 0 0 65%;
       max-width: 65%;
+
+      @include media("<tablet") {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 2rem;
+      }
 
       p {
         font-weight: 200 !important;
@@ -179,6 +202,12 @@
         font-weight: 400;
         line-height: 1.8;
         letter-spacing: 1px;
+
+        @include media("<tablet") {
+          br {
+            display: none !important;
+          }
+        }
       }
     }
   }
@@ -226,12 +255,26 @@
     align-items: center;
     justify-content: flex-start;
 
+    @include media("<tablet") {
+      height: fit-content;
+      padding: 5rem 0 10rem 0;
+    }
+
     p.work__content__text {
       font-size: 3rem;
       font-weight: 200;
       line-height: 2.2;
       letter-spacing: 1px;
       width: 100%;
+
+      @include media("<tablet") {
+        font-size: 2rem;
+        line-height: 1.6;
+
+        br {
+          display: none !important;
+        }
+      }
     }
   }
 }
@@ -296,6 +339,10 @@
       letter-spacing: 1px;
       mix-blend-mode: difference;
       margin-bottom: 2rem;
+
+      @include media("<tablet") {
+        font-size: 2rem;
+      }
     }
 
     a {
@@ -307,6 +354,10 @@
       color: $color-theme;
       mix-blend-mode: difference;
       @extend %link;
+
+      @include media("<tablet") {
+        font-size: 8rem;
+      }
     }
   }
 }

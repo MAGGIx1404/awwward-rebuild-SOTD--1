@@ -82,6 +82,10 @@
     z-index: -1;
     overflow: hidden;
 
+    @include media("<phone") {
+      width: 100vw;
+    }
+
     figure {
       width: 100%;
       height: 100%;
@@ -129,6 +133,18 @@
       letter-spacing: 1px;
       mix-blend-mode: difference;
 
+      @include media("<tablet") {
+        font-size: 8rem;
+        br {
+          display: none;
+        }
+      }
+
+      @include media("<phone") {
+        font-size: 6rem;
+        color: $color-theme;
+      }
+
       .word {
         overflow: hidden;
         .char {
@@ -145,6 +161,12 @@
 .about__us__wrapper {
   @extend %section;
 
+  @include media("<tablet") {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__inner {
     @extend %innerSection;
     min-height: fit-content;
@@ -157,11 +179,27 @@
       width: 100%;
       max-width: 65%;
 
+      @include media("<tablet") {
+        max-width: 100%;
+      }
+
       p.about__us__paragraph {
         font-size: 2rem;
         font-weight: 400;
         line-height: 1.6;
         letter-spacing: 1px;
+
+        @include media("<tablet") {
+          br {
+            display: none !important;
+          }
+        }
+
+        @include media("<phone") {
+          font-size: 1.6rem;
+          font-weight: 100;
+          letter-spacing: 2px;
+        }
       }
 
       ul {
@@ -200,15 +238,30 @@
           height: fit-content;
           padding: 4rem 0;
 
+          @include media("<tablet") {
+            padding: 2rem 0;
+          }
+
           h1 {
             font-size: 16rem;
             font-weight: 400;
             line-height: 1;
             color: $color-theme;
+
+            @include media("<tablet") {
+              font-size: 10rem;
+            }
+            @include media("<tablet") {
+              font-size: 7.5rem;
+            }
           }
 
           p {
             margin-top: 2rem;
+
+            @include media("<tablet") {
+              margin-top: 1rem;
+            }
           }
         }
       }
@@ -223,6 +276,14 @@
   max-height: fit-content;
   position: relative;
   overflow: hidden;
+
+  @include media("<tablet") {
+    min-height: 105vh;
+  }
+
+  @include media("<phone") {
+    min-height: 100vh;
+  }
 
   &__wrapper {
     width: 100%;
@@ -258,6 +319,13 @@
       font-weight: 400;
       line-height: 1;
       letter-spacing: 1px;
+
+      @include media("<tablet") {
+        font-size: 8rem;
+      }
+      @include media("<phone") {
+        font-size: 6rem;
+      }
     }
 
     .about__service__wrapper__list {
@@ -268,11 +336,21 @@
       justify-content: space-between;
       padding: 10vh 0;
 
+      @include media("<tablet") {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
       .about__service__wrapper__list__title__wrapper {
         flex: 0 0 30%;
         max-width: 30%;
         width: 100%;
         height: fit-content;
+
+        @include media("<tablet") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
 
         h4 {
           font-size: 6rem;
@@ -280,6 +358,10 @@
           line-height: 1;
           letter-spacing: 1px;
           color: $color-theme;
+
+          @include media("<phone") {
+            font-size: 4rem;
+          }
         }
       }
 
@@ -289,11 +371,29 @@
         width: 100%;
         height: fit-content;
 
+        @include media("<tablet") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
         p {
           font-size: 2.4rem;
           font-weight: 400;
           line-height: 1.6;
           letter-spacing: 1px;
+          margin-top: 2rem;
+
+          @include media("<tablet") {
+            font-size: 2rem;
+
+            br {
+              display: none !important;
+            }
+          }
+          @include media("<phone") {
+            font-size: 1.6rem;
+            font-weight: 100;
+          }
 
           &:nth-of-type(2) {
             margin-top: 2rem;
@@ -305,6 +405,12 @@
 
           li {
             padding: 0.6rem 0;
+            @include media("<tablet") {
+              padding: 0.4rem 0;
+            }
+            @include media("<phone") {
+              padding: 0;
+            }
 
             p {
               font-size: 3rem;
@@ -312,6 +418,11 @@
               letter-spacing: 1.5px;
               color: $color-theme;
               font-family: $font-b !important;
+
+              @include media("<tablet") {
+                font-size: 2rem;
+                line-height: 1;
+              }
             }
           }
         }
@@ -322,6 +433,13 @@
           padding: 2rem 2.5rem;
           border-radius: 30px;
           background: $color-gray;
+
+          @include media("<phone") {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            font-weight: 200 !important;
+            padding: 1.75rem 1.8rem;
+          }
 
           .word {
             .char {
@@ -350,11 +468,25 @@
   align-items: flex-start;
   justify-content: space-between;
 
+  @include media("<tablet") {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  @include media("<phone") {
+    padding: 5vh 0 0 0;
+  }
+
   .about__awards__title__wrapper {
     width: 100%;
     flex: 0 0 30%;
     max-width: 30%;
     height: fit-content;
+
+    @include media("<tablet") {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
 
     h4 {
       font-size: 6rem;
@@ -362,6 +494,9 @@
       line-height: 1;
       letter-spacing: 1px;
       color: $color-theme;
+      @include media("<phone") {
+        font-size: 4rem;
+      }
     }
   }
 
@@ -371,6 +506,11 @@
     width: 100%;
     height: fit-content;
 
+    @include media("<tablet") {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
     li {
       width: 100%;
       height: fit-content;
@@ -379,6 +519,10 @@
       align-items: center;
       justify-content: space-between;
       position: relative;
+
+      @include media("<phone") {
+        padding: 2rem 0;
+      }
 
       &::after {
         content: "";
@@ -411,6 +555,13 @@
         font-weight: 400;
         line-height: 1;
 
+        @include media("<tablet") {
+          font-size: 2rem;
+        }
+        @include media("<phone") {
+          font-size: 1.6rem;
+        }
+
         &:nth-of-type(2) {
           font-family: $font-b;
           color: $color-theme;
@@ -419,6 +570,13 @@
         &:nth-of-type(3) {
           text-align: end;
           font-size: 5rem;
+
+          @include media("<tablet") {
+            font-size: 4rem;
+          }
+          @include media("<phone") {
+            font-size: 3rem;
+          }
         }
       }
     }
@@ -434,6 +592,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include media("<tablet") {
+    display: none !important;
+  }
 
   figure {
     flex: 0 0 31%;
@@ -465,6 +627,13 @@
         font-size: 10rem;
         font-weight: 400;
         line-height: 1;
+
+        @include media("<tablet") {
+          font-size: 8rem;
+        }
+        @include media("<phone") {
+          font-size: 6rem;
+        }
       }
     }
 
@@ -476,11 +645,21 @@
       height: fit-content;
       padding: 10vh 0;
 
+      @include media("<tablet") {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
       &__title__wrapper {
         flex: 0 0 30%;
         max-width: 30%;
         width: 100%;
         height: fit-content;
+
+        @include media("<tablet") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
 
         h4 {
           font-size: 6rem;
@@ -488,6 +667,10 @@
           line-height: 1;
           letter-spacing: 1px;
           color: $color-theme;
+
+          @include media("<phone") {
+            font-size: 4rem;
+          }
         }
       }
 
@@ -497,11 +680,31 @@
         width: 100%;
         height: fit-content;
 
+        @include media("<tablet") {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
         p {
           font-size: 2.4rem;
           font-weight: 400;
           line-height: 1.6;
           letter-spacing: 1px;
+
+          @include media("<tablet") {
+            font-size: 2rem;
+            margin-top: 2rem;
+
+            br {
+              display: none !important;
+            }
+          }
+
+          @include media("<phone") {
+            font-size: 1.6rem;
+            font-weight: 100;
+            letter-spacing: 2px;
+          }
         }
       }
     }
@@ -542,6 +745,10 @@
     height: 100%;
     padding: 0 1.5vw;
     overflow: hidden;
+
+    @include media("<tablet") {
+      width: 400px;
+    }
 
     &:nth-child(n + 10):before {
       content: counter(count);
@@ -595,6 +802,10 @@
         font-weight: 400;
         letter-spacing: 1px;
         line-height: 1;
+
+        @include media("<tablet") {
+          font-size: 4rem;
+        }
       }
 
       &:after {
@@ -610,6 +821,10 @@
         line-height: 1;
         letter-spacing: 1px;
         font-family: $font-c;
+
+        @include media("<tablet") {
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -617,6 +832,10 @@
 
 .about__client__wrapper {
   @extend %section;
+
+  @include media("<phone") {
+    min-height: 70vh;
+  }
 
   &__inner {
     @extend %innerSection;
@@ -628,6 +847,21 @@
       font-weight: 400;
       line-height: 1.9;
       letter-spacing: 1px;
+
+      @include media("<tablet") {
+        font-size: 2.4rem;
+        line-height: 1.5;
+        font-weight: 300;
+
+        br {
+          display: none !important;
+        }
+      }
+      @include media("<tablet") {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        font-weight: 100;
+      }
     }
   }
 
