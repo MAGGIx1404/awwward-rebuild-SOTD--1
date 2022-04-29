@@ -171,7 +171,9 @@ class App {
    * Add page transition on each "a" element
    */
   addLinkListeners() {
-    const links = document.querySelectorAll("a");
+    const links = document.querySelectorAll(
+      "a:not(.footer__content__cr__link)"
+    );
     each(links, (link) => {
       link.onclick = (e) => {
         e.preventDefault();
