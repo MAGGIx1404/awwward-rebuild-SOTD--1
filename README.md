@@ -43,7 +43,7 @@ git clone https://github.com/lhbzr/bruno-arizio.git
 npm install
 
 # Configure .env variables and run the website.
-npm start
+npm run dev
 ```
 
 # Prismic
