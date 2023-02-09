@@ -2,18 +2,11 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import Splitting from "splitting";
 import each from "lodash/each";
-import map from "lodash/map";
 import Prefix from "prefix";
 import gsap from "gsap";
-import { Expo } from "gsap/all";
 import { mapEach } from "utils/dom";
 import Paragraph from "animations/Paragraph";
-import Parallax from "animations/Parallax";
-import FadeIn from "animations/FadeIn";
-import AsyncLoad from "classes/AsyncLoad";
 import locoScroll from "utils/locoscroll";
-
-import { delay } from "utils/math";
 
 export default class Page {
   constructor({ classes, id, element, elements }) {
@@ -24,8 +17,6 @@ export default class Page {
     this.selector = element;
     this.selectorChildren = {
       animationsParagraphs: '[data-animation="paragraph"]',
-      animationsParallax: '[data-animation="parallax"]',
-      animationsFadeIn: '[data-animation="p-fade-in"]',
       imagePreloaders: "[data-src]",
       overlayLines: ".overlay__line",
 
@@ -63,7 +54,6 @@ export default class Page {
     });
 
     this.createAnimations();
-    // this.createPreloadersForImages();
     this.initLocoScroll();
     this.locoScroll.update();
     this.text();
@@ -91,41 +81,6 @@ export default class Page {
     );
 
     this.animations.push(...this.animationsParagraphs);
-
-    /**
-     * Fade in
-     */
-
-    this.animationsFadeIn = mapEach(
-      this.elements.animationsFadeIn,
-      (element) => {
-        return new FadeIn({ element });
-      }
-    );
-
-    this.animations.push(...this.animationsFadeIn);
-
-    /**
-     * Parallax
-     */
-
-    this.animationsParallax = mapEach(
-      this.elements.animationsParallax,
-      (element) => {
-        return new Parallax({ element });
-      }
-    );
-
-    this.animations.push(...this.animationsParallax);
-  }
-
-  /**
-   * Lazy load images
-   */
-  createPreloadersForImages() {
-    this.preloadersForImg = map(this.elements.imagePreloaders, (img) => {
-      return new AsyncLoad({ element: img });
-    });
   }
 
   /**

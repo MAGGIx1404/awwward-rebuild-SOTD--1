@@ -1,6 +1,5 @@
 import each from "lodash/each";
 import Animation from "classes/Animation";
-import { CSS } from "utils/easings";
 import { calculate, split } from "utils/text";
 
 export default class extends Animation {
@@ -41,7 +40,9 @@ export default class extends Animation {
 
     each(this.lines, (line, lineIndex) => {
       each(line, (word) => {
-        word.style.transition = `transform 1.45s ${lineIndex * 0.1}s ${CSS}`;
+        word.style.transition = `transform 1.45s ${
+          lineIndex * 0.1
+        }s cubic-bezier(0.77, 0, 0.175, 1)`;
         word.style[this.transformPrefix] = "translateY(0)";
       });
     });
@@ -52,7 +53,7 @@ export default class extends Animation {
 
     each(this.lines, (line) => {
       each(line, (word) => {
-        word.style[this.transformPrefix] = "translateY(100%)";
+        word.style[this.transformPrefix] = "translateY(150%)";
       });
     });
   }

@@ -26,16 +26,21 @@ export default class Animation {
   }
 
   createObserver() {
-    this.observer = new window.IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!this.isVisible && entry.isIntersecting) {
-          this.animateIn();
-          observer.unobserve(entry.target);
-        } else {
-          this.animateOut();
-        }
-      });
-    }).observe(this.target);
+    this.observer = new window.IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!this.isVisible && entry.isIntersecting) {
+            this.animateIn();
+            observer.unobserve(entry.target);
+          } else {
+            this.animateOut();
+          }
+        });
+      },
+      {
+        threshold: 0
+      }
+    ).observe(this.target);
   }
 
   animateIn() {

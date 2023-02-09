@@ -29,8 +29,8 @@ module.exports = {
           to: ""
         },
         {
-          from: "./offline.html",
-          to: ""
+          from: "./offline",
+          to: "offline"
         },
         {
           from: "./shared",
@@ -51,14 +51,12 @@ module.exports = {
         test: /\.pug$/,
         use: ["pug-loader"]
       },
-
       {
         test: /\.js$/,
         use: {
           loader: "babel-loader"
         }
       },
-
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -88,17 +86,6 @@ module.exports = {
           }
         ]
       },
-
-      //   {
-      //     test: /\.(jpe?g|png|gif|svg|woff2?|otf?|ttf|fnt|webp)$/,
-      //     loader: "file-loader",
-      //     options: {
-      //       name(file) {
-      //         return "[hash].[ext]";
-      //       }
-      //     }
-      //   },
-
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource"
@@ -106,12 +93,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource"
-      },
-
-      {
-        test: /\.(glsl|vs|fs|vert|frag)$/,
-        exclude: /node_modules/,
-        use: ["raw-loader", "glslify-loader"]
       }
     ]
   }

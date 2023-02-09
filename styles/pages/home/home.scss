@@ -83,9 +83,9 @@
   .word {
     overflow: hidden;
     .char {
-      font-size: 20rem;
+      font-size: 15rem;
       font-weight: 500;
-      line-height: 1;
+      line-height: 18rem;
       transition-delay: calc(0ms + var(--char-index) * 25ms) !important;
       transform: translateY(100%);
       transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95),
@@ -375,7 +375,7 @@
             width: fit-content;
             height: fit-content;
             font-size: 10rem;
-            font-weight: 400;
+            font-weight: 700;
             letter-spacing: 1px;
             line-height: 1;
             font-family: $font-b;

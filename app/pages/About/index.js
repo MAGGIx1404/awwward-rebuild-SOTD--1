@@ -1,8 +1,5 @@
 import Page from "classes/Page";
-// import cube from "vendors/cube";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { delay } from "utils/math";
 import Ukiyo from "ukiyojs";
 
 export default class About extends Page {
@@ -32,12 +29,6 @@ export default class About extends Page {
 
   parallax() {
     this.imgOne = [...this.elements.about_pics];
-    // this.imgOne = this.elements.about_pics;
-
-    // this.parallaxEffect = new Ukiyo(this.imgOne, {
-    //   speed: 2,
-    //   scale: 1.4
-    // });
     this.imgOne.forEach((ele) => {
       this.parallaxEffect = new Ukiyo(ele, {
         speed: 2,

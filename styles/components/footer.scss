@@ -26,7 +26,7 @@ footer.footer__wrapper {
 
         a {
           font-size: 7.5rem;
-          font-weight: 400;
+          font-weight: bold;
           letter-spacing: 1px;
           line-height: 1;
           font-family: $font-b !important;
@@ -130,26 +130,13 @@ footer.footer__wrapper {
 
     p.footer__content__tail {
       font-size: 12rem;
-      font-weight: 400;
+      font-weight: bold;
+      padding-left: 5vw;
       line-height: 1;
       letter-spacing: 1px;
       font-family: $font-b !important;
-      width: 55rem;
-      text-shadow: 55rem 0 currentColor, calc(55rem * 2) 0 currentColor,
-        calc(55rem * 3) 0 currentColor, calc(55rem * 4) 0 currentColor,
-        calc(55rem * 5) 0 currentColor;
-      animation: move 7s linear infinite;
       transition: color 0.4s;
     }
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
 

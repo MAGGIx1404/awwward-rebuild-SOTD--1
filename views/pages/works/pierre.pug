@@ -1,0 +1,41 @@
+extends ../../base.pug
+include ./work.pug
+
+block variables
+    - var template = 'work'
+
+block body
+    +template({
+        id: "pierre",
+        banner: {
+            pic: "https://images.prismic.io/alioth/c7cbf9eb-2fa7-4820-a924-0a6203e12426_8.jpg?auto=compress,format",
+            title: "Pierre",
+            role: "UI/UX Design"
+        },
+        info: {
+            date: "Beat - 2014",
+            text: "From which we spring not a sunrise but a galaxyrise across the centuries Tunguska event Euclid descended from astronomers? Muse about emerged into consciousness vanquish the impossible the sky calls to us Orion's sword venture. Astonishment rings of Uranus stirred by starlight venture two ghostly white figures in coveralls and helmets."
+        },
+        picsOne: {
+            1: "https://images.prismic.io/alioth/4d948a07-723f-4a0c-b002-98fd2f138578_pierre_1.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/c641defa-33ea-4f1f-a192-8db45b6f2a19_pierre_2.jpg?auto=compress,format",
+            3: "https://images.prismic.io/alioth/ff04c6a8-368a-44d7-9212-606678053418_pierre_3.jpg?auto=compress,format&rect=0,1,1918,1115&w=1920&h=1116",
+            4: "https://images.prismic.io/alioth/4dd3d341-eee0-4c39-aa29-5cde14db82da_pierre_4.jpg?auto=compress,format"
+        },
+        work: {
+            text_one: "Citizens of distant epochs stirred by starlight white dwarf Sea of Tranquility a still more glorious dawn awaits tendrils of gossamer clouds? Extraordinary claims require extraordinary evidence something incredible is waiting to be known prime number prime number at the edge of forever two ghostly white figures in coveralls and helmets are softly dancing. Two ghostly white figures in coveralls and helmets are softly dancing great turbulent clouds muse  about with pretty stories for which there's little good evidence take root and flourish a  mote of dust suspended in a sunbeam.",
+            text_two: "Patch of Light",
+            text_three: "Culture colonies explorations emerged into consciousness across the centuries venture. Dream of the mind's eye Jean-François Champollion something incredible is waiting to be known circumnavigated stirred by starlight how far away. Finite but unbounded great turbulent clouds two ghostly white figures in coveralls and helmets are softly dancing how far away gathered by gravity courage of our questions."
+        },
+        extra: "https://images.prismic.io/alioth/253aa385-278e-422d-b502-7f54b2a483b8_pierre_5.jpg?auto=compress,format",
+        picsTwo: {
+            1: "https://images.prismic.io/alioth/a0506b3b-592a-43e4-b37d-ee4c659933f0_pierre_6.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/26fa7a19-f212-4699-8121-4fddc1abae9c_pierre_7.jpg?auto=compress,format",
+            3: "https://images.prismic.io/alioth/2f9196ad-6dd0-4b10-b020-d17dc597f084_pierre_8.jpg?auto=compress,format"
+        },
+        next: {
+            pic: "https://images.prismic.io/alioth/705958c2-7081-40b0-ac32-0421d8b986ab_7.jpg?auto=compress,format&rect=1,0,1917,1279&w=1920&h=1281",
+            title: "Shiny Diamond",
+            id: "shiny_diamond"
+        }
+    })

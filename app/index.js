@@ -1,10 +1,13 @@
+import "utils/scroll";
+import "utils/polyfill";
+import "utils/sw";
+
 import Home from "pages/Home";
 import About from "pages/About";
 import Portfolio from "pages/Portfolio";
 import Contact from "pages/Contact";
 import Work from "pages/Work";
 import Preloader from "components/Preloader";
-// import Transition from "components/Transition";
 import each from "lodash/each";
 import magnetBtn from "vendors/magnet";
 
@@ -12,7 +15,6 @@ class App {
   constructor() {
     console.log("🦸🦸 Superman Initialize");
     this.preloader = null;
-    // this.hamburger = null;
     this.content = null;
     this.template = null;
     this.pages = {};
@@ -25,7 +27,6 @@ class App {
     this.createContent();
     this.createPreloader();
     this.createTransition();
-    // this.createHamburger();
     this.createPages();
     magnetBtn();
     this.hambMenu();
@@ -125,17 +126,7 @@ class App {
       this.content.innerHTML = divContent.innerHTML;
       this.page = this.pages[this.template];
 
-      // if (this.template === "work") {
-      //   const preloadImageToAssets = this.content.querySelector(
-      //     ".work__banner__wrapper img"
-      //   );
-      //   window.ASSETS.unshift(preloadImageToAssets.getAttribute("data-src"));
-      // }
       this.preloadingOnPageTransition();
-      //   this.page.create();
-      //   this.onResize();
-      //   this.addLinkListeners();
-      //   this.page.show();
     }
   }
 

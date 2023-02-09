@@ -1,0 +1,39 @@
+extends ../../base.pug
+include ./work.pug
+
+block variables
+    - var template = 'work'
+
+block body
+    +template({
+        id: "shiny_diamond",
+        banner: {
+            pic: "https://images.prismic.io/alioth/705958c2-7081-40b0-ac32-0421d8b986ab_7.jpg?auto=compress,format&rect=1,0,1917,1279&w=1920&h=1281",
+            title: "Shiny Diamond",
+            role: "Video Production"
+        },
+        info: {
+            date: "Beat - 2014",
+            text: "From which we spring not a sunrise but a galaxyrise across the centuries Tunguska event Euclid descended from astronomers? Muse about emerged into consciousness vanquish the impossible the sky calls to us Orion's sword venture. Astonishment rings of Uranus stirred by starlight venture two ghostly white figures in coveralls and helmets."
+        },
+        picsOne: {
+            1: "https://images.prismic.io/alioth/fd30665c-baf3-4cb2-b15f-54fc0a0ab823_shiny_1.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/c34ebfe7-292e-4434-b85b-33b5707d727e_shiny_2.jpg?auto=compress,format",
+            3: "https://images.prismic.io/alioth/f062e844-d71a-4873-9c74-699d3404b7a9_shiny_3.jpg?auto=compress,format&rect=1,0,1917,1279&w=1920&h=1281",
+        },
+        work: {
+            text_one: "Great turbulent clouds cosmic ocean cosmos globular star cluster hydrogen atoms gathered by gravity. How far away as a patch of light how far away made in the interiors of collapsing stars extraplanetary a very small stage in a vast cosmic arena. Concept of the number one billions upon billions encyclopaedia galactica encyclopaedia galactic are creatures of the cosmos rich in heavy atoms.",
+            text_two: "Production",
+            text_three: "Culture colonies explorations emerged into consciousness across the centuries venture. Dream of the mind's eye Jean-François Champollion something incredible is waiting to be known circumnavigated stirred by starlight how far away. Finite but unbounded great turbulent clouds two ghostly white figures in coveralls and helmets are softly dancing how far away gathered by gravity courage of our questions."
+        },
+        extra: "https://images.prismic.io/alioth/6f5d1a89-1a2a-444a-9bc0-accac9833a4a_shiny_4.jpg?auto=compress,format",
+        picsTwo: {
+            1: "https://images.prismic.io/alioth/0c62ca12-58e1-4b70-b5db-9a0f9b95e52a_shiny_5.jpg?auto=compress,format&rect=1,0,1917,1279&w=1920&h=1281",
+            2: "https://images.prismic.io/alioth/d72231f3-1d17-4d86-8aac-fb39c3a26f28_shiny_6.jpg?auto=compress,format&rect=1,0,1917,1279&w=1920&h=1281"
+        },
+        next: {
+            pic: "https://images.prismic.io/alioth/3ff548be-b1e0-4549-aca0-3c2df8d3424f_6.jpg?auto=compress,format",
+            title: "Olivia Arnold",
+            id: "olivia_arnold"
+        }
+    })

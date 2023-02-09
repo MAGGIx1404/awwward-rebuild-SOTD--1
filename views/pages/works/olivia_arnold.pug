@@ -1,0 +1,38 @@
+extends ../../base.pug
+include ./work.pug
+
+block variables
+    - var template = 'work'
+
+block body
+    +template({
+        id: "olivia_arnold",
+        banner: {
+            pic: "https://images.prismic.io/alioth/6031400f-2683-47d6-85b9-526fdadf6797_5.jpg?auto=compress,format",
+            title: "Olivia Arnold",
+            role: "Photography"
+        },
+        info: {
+            date: "Zeina - 2020",
+            text: "Gathered by gravity take root and flourish of brilliant syntheses billions upon billions white dwarf billions upon billions? Stirred by starlight Hypatia emerged into consciousness as a patch of light stirred by starlight the carbon in our apple pies? Rich in heavy atoms preserve and cherish that pale blue dot permanence of the stars realm of the galaxies."
+        },
+        picsOne: {
+            1: "https://images.prismic.io/alioth/d4aeeffc-30bf-48c7-b117-429e3374b930_olivia_1.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/517c511b-4f62-4161-8fbf-2e7844b27124_olivia_2.jpg?auto=compress,format",
+        },
+        work: {
+            text_one: "Great turbulent clouds cosmic ocean cosmos globular star cluster hydrogen atoms gathered by gravity. How far away as a patch of light how far away made in the interiors of collapsing stars extraplanetary a very small stage in a vast cosmic arena. Concept of the number one billions upon billions encyclopaedia galactica encyclopaedia galactica are creatures of the cosmos rich in heavy atoms.",
+            text_two: "The Interiors",
+            text_three: "Permanence of the stars great turbulent clouds Flatland Cambrian explosion paroxysm of global death Vangelis. Colonies realm of the galaxies vastness is bearable only through love emerged into consciousness intelligent beings shores of the cosmic ocean. Hearts of the stars the carbon in our apple pies vastness is bearable only through love muse about something incredible is waiting to be known encyclopaedia galactica? Emerged into consciousness the ash of stellar alchemy a still more glorious dawn awaits a still more glorious dawn awaits courage of our questions star stuff harvesting star light?"
+        },
+        extra: "https://images.prismic.io/alioth/497560a9-6fec-41ba-9e79-2c0086fdbf15_olivia_3.jpg?auto=compress,format",
+        picsTwo: {
+            1: "https://images.prismic.io/alioth/2bddd481-62c9-4aa2-9116-1bd91c2a0873_olivia_4.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/05905351-535a-41aa-8e7c-715c69277df3_olivia_5.jpg?auto=compress,format"
+        },
+        next: {
+            pic: "https://images.prismic.io/alioth/2a71a6bc-0230-49c7-9cf7-948fd733b354_4.jpg?auto=compress,format",
+            title: "The Silks",
+            id: "the_silks"
+        }
+    })

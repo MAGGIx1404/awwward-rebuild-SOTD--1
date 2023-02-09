@@ -1,0 +1,59 @@
+mixin template({id, banner, info, picsOne, work, extra, picsTwo, next})
+    .work(data-background="" data-color="")
+        canvas.webgl-container
+        //- Scroll wrapper
+        .work__wrapper
+            .work__banner
+                .work__banner__bg__wrapper
+                    figure.work__banner__picture__wrapper
+                        img.work__banner__picture.parallax__image(data-src=`${banner.pic}`, alt="IMAGE" crossorigin="anonymous")
+                .work__banner__titles__wrapper
+                    h1.work__banner__title.splitter=banner.title
+                    h4.work__banner__role.splitter=banner.role
+            //- info
+            .work__info__wrapper
+                .work__info__wrapper__inner
+                    .work__info__left
+                        p.work__info__text(data-animation="paragraph")= info.date
+                    .work__info__right
+                        p.work__info__text(data-animation="paragraph")= info.text
+            //- Main Pictures
+            .work__pictures__wrapper
+                .work__pictures__wrapper__inner
+                    //- from server
+                    each link in picsOne
+                        figure.work__picture__wrapper
+                            img.work__picture.parallax__image(data-src=`${link}`, alt="IMAGE" crossorigin="anonymous")
+            //- Content
+            .work__content__wrapper
+                .work__content__wrapper__inner
+                    p.work__content__text(data-animation="paragraph")= work.text_one
+            //- work screen
+            .work__screen__wrapper
+                figure.work__screen__wrapper__inner
+                    img.work__screen__picture.parallax__image(data-src=`${extra}`, alt="Image")
+
+            //- info-2
+            .work__info__wrapper
+                .work__info__wrapper__inner
+                    .work__info__left
+                        p.work__info__text(data-animation="paragraph")= work.text_two
+                    .work__info__right
+                        p.work__info__text(data-animation="paragraph")= work.text_three
+
+            //- Main Pictures 2
+            .work__pictures__wrapper
+                .work__pictures__wrapper__inner
+                    each link in picsTwo
+                        figure.work__picture__wrapper
+                            img.work__picture.parallax__image(data-src=`${link}`, alt="IMAGE" crossorigin="anonymous")
+
+            //- next section
+            .work__next__wrapper
+                figure.work__next__bg__wrapper
+                    img.work__next__bg__picture.parallax__image(data-src=`${next.pic}`, alt="IMAGE")
+                .work__next__wrapper__inner
+                    h6.work__next__title(data-animation="paragraph") Next Project
+                    a.work__next__btn(href=`/works/${next.id}` data-animation="paragraph")= next.title
+
+            include ../../partials/footer

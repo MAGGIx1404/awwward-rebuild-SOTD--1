@@ -1,9 +1,5 @@
 import Page from "classes/Page";
-// import cube from "vendors/cube";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { delay } from "utils/math";
-import Ukiyo from "ukiyojs";
 
 export default class Portfolio extends Page {
   constructor() {
@@ -113,8 +109,7 @@ export default class Portfolio extends Page {
       oldScrollY = y;
 
       gsap.to(this.elements.items, {
-        scale: 1 - Math.min(100, Math.abs(scrollSpeed)) * 0.0015,
-        rotate: scrollSpeed * 0.05
+        skewX: -scrollSpeed * 0.2
       });
     };
     render();

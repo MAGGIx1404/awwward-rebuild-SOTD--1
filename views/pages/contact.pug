@@ -15,11 +15,11 @@ block body
                             img.banner__picture.parallax__image(data-src="/contact_banner.jpg", alt="error")
                 .contact__banner__wrapper__inner
                     .contact__banner__title__wrapper
-                        h1.contact__banner__title.splitter!=contact.data.contact_banner[0].banner_title.replace(/\n/g,"</br>")
+                        h1.contact__banner__title.splitter Get in touch!
                 .contact__banner__main__wrapper
                     .contact__banner__main__wrapper__inner
                         .contact__banner__form__wrapper
-                                    h4.contact__form__title!=contact.data.contact_banner[0].form_title.replace(/\n/g,"</br>")
+                                    h4.contact__form__title Hi. Tell us about your project. #[br] Fill the form below;
                                     form.contact__form(action="/")
                                         input.contact__form__company__name(type="text" placeholder="Company Name" name="company" required)
                                         input.contact__form__name(type="text" placeholder="Your Name" name="name" required)

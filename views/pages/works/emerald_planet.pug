@@ -1,0 +1,38 @@
+extends ../../base.pug
+include ./work.pug
+
+block variables
+    - var template = 'work'
+
+block body
+    +template({
+        id: "emerald_planet",
+        banner: {
+            pic: "https://images.prismic.io/alioth/c43380d2-cabf-4971-895f-4c90a252c8f5_3.webp?auto=compress,format",
+            title: "Emerald Planet",
+            role: "Photography",
+        },
+        info: {
+            date: "Last Penya - 2017",
+            text: "At the edge of forever hydrogen atoms tendrils of gossamer clouds rich in mystery circumnavigated Orion's sword. Dream of the mind's eye paroxysm of global death Sea of Tranquility the sky calls to us Sea of Tranquility another world. Vastness is bearable only through love invent the universe not a sunrise but a galaxyrise star stuff harvesting."
+        },
+        picsOne: {
+            1: "https://images.prismic.io/alioth/7f71f546-c345-498c-9be8-f53b79d6280f_emerald_1.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/acd1ee30-60bf-46b5-a534-a333e79b5fbc_emerald_2.jpg?auto=compress,format",
+        },
+        work: {
+            text_one: "Great turbulent clouds cosmic ocean cosmos globular star cluster hydrogen atoms gathered by gravity. How far away as a patch of light how far away made in the interiors of collapsing stars extraplanetary a very small stage in a vast cosmic arena. Concept of the number one billions upon billions encyclopaedia galactica encyclopaedia galactic are creatures of the cosmos rich in heavy atoms.",
+            text_two: "Patch of Light",
+            text_three: "Encyclopaedia galactica cosmic fugue corpus callosum the ash of stellar alchemy tingling of the spine explorations. Euclid white dwarf the sky calls to us hydrogen atoms emerged into consciousness extraordinary claims require extraordinary evidence? Paroxysm of global death citizens of distant epochs Sea of Tranquility a very small stage in a vast cosmic arena emerged into consciousness a still more glorious dawn awaits."
+        },
+        extra: "https://images.prismic.io/alioth/cef44e60-31ce-44c6-95d5-2d08414e5bb1_emerald_3.jpg?auto=compress,format",
+        picsTwo: {
+            1: "https://images.prismic.io/alioth/a14a55f8-d748-437a-9e20-95759f2c69a0_emerald_4.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/e508f27b-071a-4584-845d-ad11f89aca8e_emerald_5.jpg?auto=compress,format",
+        },
+        next: {
+            pic: "https://images.prismic.io/alioth/50624eb8-7e3e-4975-bc7b-91c926f96795_2.jpg?auto=compress,format",
+            title: "The Secrets",
+            id: "the_secrets"
+        }
+    })

@@ -76,17 +76,14 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: fit-content;
+      height: 20rem;
       text-align: left;
-      padding: 0 15vw;
+      padding: 0 5vw;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: flex-start;
 
-      @include media("<tablet") {
-        padding: 0 5vw;
-      }
       @include media("<phone") {
         height: 18rem;
       }
@@ -161,9 +158,9 @@
           overflow: hidden;
           line-height: 1;
           .char {
-            line-height: 1;
+            line-height: 18rem;
             font-size: 16rem;
-            font-weight: 400;
+            font-weight: bold;
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
             transition-delay: calc(0ms + var(--char-index) * 15ms) !important;

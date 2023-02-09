@@ -1,0 +1,40 @@
+extends ../../base.pug
+include ./work.pug
+
+block variables
+    - var template = 'work'
+
+block body
+    +template({
+        id: "the_silks",
+        banner: {
+            pic: "https://images.prismic.io/alioth/9e503936-1f7d-4d78-bd91-ff35108f0121_silk_banner.jpg?auto=compress,format",
+            title: "The Silks",
+            role: "Branding",
+        },
+        info: {
+            date: "Naila - 2017",
+            text: "From which we spring not a sunrise but a galaxyrise across the centuries Tunguska event Euclid descended from astronomers? Muse about emerged into consciousness vanquish the impossible the sky calls to us Orion's sword venture. Astonishment rings of Uranus stirred by starlight venture two ghostly white figures in coveralls and helmets."
+        },
+        picsOne: {
+            1: "https://images.prismic.io/alioth/43b30cb5-51fd-46be-a580-51d7e8b3d242_silk_1.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/df832f28-b809-4d3e-a98c-0fbb31adb1da_silk_2.jpg?auto=compress,format",
+            3: "https://images.prismic.io/alioth/4c739159-da16-46c1-a4c0-0cac665d9685_silk_4.webp?auto=compress,format",
+            4: "https://images.prismic.io/alioth/ccf40333-264e-4ee9-950e-3bc1f55a3801_rainbow_4.webp?auto=compress,format"
+        },
+        work: {
+            text_one: "Citizens of distant epochs stirred by starlight white dwarf Sea of Tranquility a still more glorious dawn awaits tendrils of gossamer clouds? Extraordinary claims require extraordinary evidence something incredible is waiting to be known prime number prime number at the edge of forever two ghostly white figures in coveralls and helmets are softly dancing. Two ghostly white figures in coveralls and helmets are softly dancing great turbulent clouds muse  about with pretty stories for which there's little good evidence take root and flourish a  mote of dust suspended in a sunbeam.",
+            text_two: "Patch of Light",
+            text_three: "Culture colonies explorations emerged into consciousness across the centuries venture. Dream of the mind's eye Jean-François Champollion something incredible is waiting to be known circumnavigated stirred by starlight how far away. Finite but unbounded great turbulent clouds two ghostly white figures in coveralls and helmets are softly dancing how far away gathered by gravity courage of our questions."
+        },
+        extra: "https://images.prismic.io/alioth/e15fe41c-0bb2-4505-8fbd-f385d0f287b7_silk_5.jpg?auto=compress,format",
+        picsTwo: {
+            1: "https://images.prismic.io/alioth/9f23e107-385b-45b6-afb2-8189eef15d6c_silk_6.jpg?auto=compress,format",
+            2: "https://images.prismic.io/alioth/ed9db9ef-74cd-436c-ac57-3e1022c395f6_silk_7.jpg?auto=compress,format"
+        },
+        next: {
+            pic: "https://images.prismic.io/alioth/6031400f-2683-47d6-85b9-526fdadf6797_5.jpg?auto=compress,format",
+            title: "Rainbows",
+            id: "rainbows"
+        }
+    })
