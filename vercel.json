@@ -1,0 +1,10 @@
+{
+    "version": 1,
+    "name": "awwwards-rebuild-1",
+    "builds": [
+       { "src": "app.mjs", "use": "@vercel/node" }
+    ],
+    "routes": [
+       { "src": "/(.*)", "dest": "/app.mjs" }
+    ]
+ }
