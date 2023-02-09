@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 3,
     "name": "awwwards-rebuild-1",
     "builds": [
        { "src": "app.mjs", "use": "@vercel/node" }
